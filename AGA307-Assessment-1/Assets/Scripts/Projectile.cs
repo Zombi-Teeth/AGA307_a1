@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+   void OnCollisionEnter(Collision collision)
     {
+        if (collision.collider.CompareTag("Target"))
+        {
+            collision.collider.GetComponent<Renderer>().material.color = Color.red;
 
+        }
     }
 }

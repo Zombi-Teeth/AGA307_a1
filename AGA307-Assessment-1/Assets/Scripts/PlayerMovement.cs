@@ -1,5 +1,5 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -22,12 +22,15 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody RB;
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
 
-    [Header("--- Projectile Settings ---")]
-    public float Velocity = 1000;
-    public Transform projectileSpawner;
-    public GameObject projectilePrefab;
-    public float projectileLifeTime = 5;
+    [Header(" ----- Projectile Settings-----")]
+    public Transform projectileSpawn;
+    public GameObject[] projectileTypes;
 
+    public int projectileSpeed = 10;
+    public int projectileLifetime = 2;
+    public int currentWeapon = 0;
+
+    public GameObject myCamera;
 
 
     void Awake()
@@ -77,12 +80,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
             Shoot();
+
+        ChangeWeapon();
+
     }
 
     void Shoot()
     {
-        GameObject projectileInstance = Instantiate(projectilePrefab, projectileSpawner.position, projectileSpawner.rotation);
-        projectileInstance.GetComponent<Rigidbody>().AddForce(projectileSpawner.transform.forward * Velocity);
-        Destroy(projectileInstance, projectileLifeTime);
+        GameObject proj = Instantiate(projectileTypes[currentWeapon], projectileSpawn.position, projectileSpawn.rotation);
+        proj.GetComponent<Rigidbody>().velocity = myCamera.transform.forward * projectileSpeed;       
+        Destroy(proj, projectileLifetime);
     }
+
+    void ChangeWeapon()
+    {
+        if (Input.GetKeyDown("1"))
+            currentWeapon = 0;
+        else if (Input.GetKeyDown("2"))
+            currentWeapon = 1;
+        else if (Input.GetKeyDown("3"))
+            currentWeapon = 2;
+
+    }
+
 }
