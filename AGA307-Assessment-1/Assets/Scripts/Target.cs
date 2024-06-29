@@ -12,6 +12,12 @@ public class Target : MonoBehaviour
         set => _hp = Mathf.Clamp(value, 0, maxHP);
     }
     public int maxHP = 5;
+    float scaleFactor = 1;
+
+    private void Start()
+    {
+      Setup();
+    }
 
     void OnCollisionEnter()
     {
@@ -20,4 +26,23 @@ public class Target : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
+    void Setup()
+    {
+        /*switch (targetSize)
+        {
+            case TargetSize.Small:
+                transform.localScale = Vector3.one * scaleFactor;
+                break;
+            case TargetSize.Medium:
+                transform.localScale = Vector3.one * scaleFactor;
+                break;
+            case TargetSize.Large:
+                transform.localScale = Vector3.one * scaleFactor;
+                break;
+
+        }*/
+    }
+
 }
+    
+

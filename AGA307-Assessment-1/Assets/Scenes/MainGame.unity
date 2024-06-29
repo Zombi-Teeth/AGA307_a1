@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 1.2102548, g: 0.883931, b: 0.5953271, a: 1}
+  m_IndirectSpecularColor: {r: 1.2104757, g: 0.88403726, b: 0.59537303, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1262,25 +1262,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1260583311}
+  - {fileID: 1073248908}
+  - {fileID: 1425633036}
+  - {fileID: 460514319}
+  - {fileID: 360458833}
+  - {fileID: 1648436587}
+  - {fileID: 1147233464}
+  - {fileID: 598058174}
   enemyTypes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  - {fileID: 133616, guid: b806d07906e3ec2418b856b830337dcf, type: 3}
+  - {fileID: 165576, guid: 37030c5c7c1b6674dac293a85cc7d5a6, type: 3}
+  - {fileID: 154340, guid: 95af6d03dc5e07142b1a349a829d8b30, type: 3}
+  - {fileID: 185486, guid: 3a367ca1b4f5a1a47bda6e98e7ba1f43, type: 3}
+  - {fileID: 123184, guid: e967c42ede832ae4d964d682b25ec538, type: 3}
+  - {fileID: 188982, guid: d86c716d338a1a04d89b6ee52d44933c, type: 3}
+  - {fileID: 154340, guid: 95af6d03dc5e07142b1a349a829d8b30, type: 3}
   enemies: []
-  player: {fileID: 0}
+  player: {fileID: 1475256676}
 --- !u!43 &571578267
 Mesh:
   m_ObjectHideFlags: 0
@@ -4670,6 +4670,11 @@ Transform:
   - {fileID: 1080338133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1475256676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7032069670058271662, guid: cb368fcfe9cf4df45bc43728499e7f91, type: 3}
+  m_PrefabInstance: {fileID: 8447147888117093918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1475767602
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,7 +6005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807978813}
-  - component: {fileID: 1807978812}
+  - component: {fileID: 1807978814}
   m_Layer: 0
   m_Name: SPT
   m_TagString: Untagged
@@ -6008,38 +6013,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1807978812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807978811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5077edab0560bd4fba3b97895d5106a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 1260583311}
-  - {fileID: 1073248908}
-  - {fileID: 1425633036}
-  - {fileID: 460514319}
-  - {fileID: 360458833}
-  - {fileID: 1648436587}
-  - {fileID: 1147233464}
-  - {fileID: 598058174}
-  enemyTypes:
-  - {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-  - {fileID: 133616, guid: b806d07906e3ec2418b856b830337dcf, type: 3}
-  - {fileID: 108450, guid: cf1f48d2327ff8640a3ed8e9673685ac, type: 3}
-  - {fileID: 165576, guid: 37030c5c7c1b6674dac293a85cc7d5a6, type: 3}
-  - {fileID: 197444, guid: b2951f8d32af933468dd00c41bb3f7d8, type: 3}
-  - {fileID: 185486, guid: 3a367ca1b4f5a1a47bda6e98e7ba1f43, type: 3}
-  - {fileID: 154340, guid: 95af6d03dc5e07142b1a349a829d8b30, type: 3}
-  - {fileID: 159544, guid: 77ad0facb2a27504ab8edf68c35a1346, type: 3}
-  enemies: []
-  player: {fileID: 0}
 --- !u!4 &1807978813
 Transform:
   m_ObjectHideFlags: 0
@@ -6063,6 +6036,34 @@ Transform:
   - {fileID: 1199380059}
   m_Father: {fileID: 2070064440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807978814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807978811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd84eb14c031044e846ed96cb7120fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpawnpoints:
+  - {fileID: 199557022}
+  - {fileID: 258109567}
+  - {fileID: 859420306}
+  - {fileID: 994189084}
+  - {fileID: 337777668}
+  - {fileID: 1788530624}
+  - {fileID: 1574614320}
+  - {fileID: 1199380059}
+  targetTypes:
+  - {fileID: 8162780214551408369, guid: 21a98dfe0d0921f4284fb2d6d8caefd9, type: 3}
+  - {fileID: 8162780214551408369, guid: 92f2132c671f1dc4ea5316fde2e847e6, type: 3}
+  - {fileID: 8162780214551408369, guid: 891f2a5b714da354aa95d77e16cbaa73, type: 3}
+  - {fileID: 8162780214551408369, guid: 9bd39d4fcfe94e443881b8cc7ca60c9e, type: 3}
+  targets: []
+  player: {fileID: 1475256676}
 --- !u!1 &1818422255
 GameObject:
   m_ObjectHideFlags: 0

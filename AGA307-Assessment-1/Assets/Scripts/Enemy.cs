@@ -16,12 +16,20 @@ public class Enemy : MonoBehaviour
 
     void SetUp()
     {
-        if (enemyType == EnemyType.OneHanded)
-            health = 100;
-        else if (enemyType == EnemyType.TwoHanded)
-            health = 200;
-        else if (enemyType == EnemyType.Archer)
-            health = 50;
+        switch (enemyTypes)
+        {
+            case EnemyTypes.OneHanded:
+                health = 100;
+                break;
+
+            case EnemyTypes.TwoHanded:
+                health = 200;
+                break;
+
+            case EnemyTypes.Archer:
+                health = 50;
+                break;
+        }
     }
 
     void Update()
@@ -37,13 +45,14 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < moveDistance; i++)
         {
             transform.Translate(Vector3.forward * Time.deltaTime);
+
             yield return null;
         }
-        //Rotate our boject 180 ndegrees so that its facing the other way
-        transform.Rotate(Vector3.up * 180);   
-        //Wait 3 seconds
+
+        transform.Rotate(Vector3.up * 180);
+
         yield return new WaitForSeconds(3);
-        //Call the coroutine again
+
         StartCoroutine(Move());
     }
 

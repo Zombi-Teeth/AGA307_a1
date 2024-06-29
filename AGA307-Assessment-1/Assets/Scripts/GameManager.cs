@@ -4,17 +4,40 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameState gameState;
-    public GameDifficulty gameDifficulty;
+    public GameState state;
+    public Difficulty difficulty;
+    int scoreMultipler = 1;
 
+
+    // Start is called before the first frame update
     void Start()
     {
-        gameState = GameState.Start;
-    }
+        state = GameState.Start;
 
+        difficulty = Difficulty.Easy;
+        Setup();
+    }
     
-    void Update()
+
+    void Setup()
     {
-        
+        switch (difficulty)
+        {
+            case Difficulty.Easy:
+                scoreMultipler = 1;
+                break;
+            case Difficulty.Medium:
+                scoreMultipler = 2;
+                break;
+            case Difficulty.Hard:
+                scoreMultipler = 3;
+                break;
+            default:
+                scoreMultipler = 1;
+                break;
+
+        }
+
     }
 }
+
