@@ -11,10 +11,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        SetUp();
+       // SetUp();
     }
 
-    void SetUp()
+   /* void SetUp()
     {
         switch (enemyTypes)
         {
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
     }
-
+   */
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
