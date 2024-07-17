@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public GameState state;
     public Difficulty difficulty;
     int scoreMultipler = 1;
+    static public int score = 100;
+
+    public GameObject ScoreTextBox;
+    public GameObject pauseMenuUI;
+    public bool isPaused;
 
 
     // Start is called before the first frame update
@@ -15,14 +20,12 @@ public class GameManager : MonoBehaviour
     {
         state = GameState.Start;
         // difficulty = Difficulty.Easy;
-        GameEvents.;EnemyHit += EnemyHit;
-        StartCoroutine(timer());
 
         Time.timeScale = 0f;
 
         Cursor.lockState = CursorLockMode.None;
     }
-    
+
 
     void Setup()
     {
@@ -44,60 +47,43 @@ public class GameManager : MonoBehaviour
         }
 
     }
-}
-
-public class ScoreManager : MonoBehaviour
-{
-
-    static public int score = 100;
-
-    public GameObject ScoreTextBox;
 
 
-    // Update is called once per frame
     void Update()
     {
-        ScoreTextBox.GetComponent<Text>().text = Score.ToString();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
-                ResumeGame();
+                Resume();
             }
             else
             {
-                PauseGame();
+                Pause();
             }
 
         }
     }
-    public void AddScore(int scoreAdd)
+
+    public void Resume()
     {
-        score += scoreAdd * scoreMultiplyer;
+        
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
+        pauseMenuUI.SetActive(false);
     }
 
-    void EnemyHit(Enemy e)
+
+    public void Pause()
     {
-        AddScore(10);
+        
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;
+        pauseMenuUI.SetActive(true);
+
     }
-}
 
-public void ResumeGame()
-{ 
-    pauseMenuUI.SetActive(false);
-    Time.timeScale = 1f;
-    isPaused = false;
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-}
-
-void PauseGame()
-{
-    pauseMenuUI.SetActive(true);
-    Timeout.timeScale = 0f;
-    isPaused = true;
-
-    Cursor.lockstate + CursorLockMode.None;
-    Cursor.visible = true;
 }
